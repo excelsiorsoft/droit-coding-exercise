@@ -1,4 +1,4 @@
-ocrates is a man. All men are mortal. Therefore, Socrates is mortal.
+Socrates is a man. All men are mortal. Therefore, Socrates is mortal.
 
 You probably know that a general inference engine may carry out this sort of reasoning by combining the knowledge encapsulated in a rule like `Human(x) -> Mortal(x)` with the knowledge of the fact `Human(Socrates)` to infer `Mortal(Socrates)`.
 
