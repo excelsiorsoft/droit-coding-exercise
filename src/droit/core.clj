@@ -37,7 +37,7 @@
 ;into-sets:  ([#{:b :a} #{:c}] [#{:e :c :d} #{:f}] [#{:e :k :d} #{:m}] [#{:t :p} #{:k}])
 ;=> [#{:e :k :c :b :d :t :p :a} #{:m :k :c :f}]
 
-;;task2
+;;droit
 (def rule1 [[:a :b] :-> :c])
 (def rule2 [[:c :d :e] :-> :f])
 (def rule3 [[:k :d :e] :-> :m])
@@ -144,7 +144,7 @@
         dependents (map (partial dep/transitive-dependents graph) facts)]
     dependents))
 
-;=> #'task2.core/task2
+;=> #'droit.core/droit
 (task2 ruleset [:a :b])
 
 ;===================
@@ -261,7 +261,7 @@ key:  :f value:  #{:e :c :b :d :a}
       (if(= facts deps)(conj outcomes node) nil))))
 
 
-;=> #'task2.core/task2
+;=> #'droit.core/droit
 (task2 ruleset #{:a :b})
 ;=> (#{:c} nil)
 
@@ -277,7 +277,7 @@ key:  :f value:  #{:e :c :b :d :a}
       (if(= facts v)(conj outcomes k) outcomes))))
 
 
-;=> #'task2.core/task2
+;=> #'droit.core/droit
 (task2 ruleset #{:a :b})
 ;=> (#{:c} #{})
 
@@ -293,7 +293,7 @@ key:  :f value:  #{:e :c :b :d :a}
       (if(= facts v)(conj outcomes k) outcomes))))
 
 
-;=> #'task2.core/task2
+;=> #'droit.core/droit
 (task2 ruleset #{:a :b})
 ;=> (#{:c} #{})
 (task2 ruleset #{:a :b :c :d :e})
@@ -317,7 +317,7 @@ key:  :f value:  #{:e :c :b :d :a}
       ;(if(= facts v)(conj outcomes k) outcomes)
 
 
-;=> #'task2.core/task2
+;=> #'droit.core/droit
 (task2 ruleset #{:a :b :c :d :e})
 dependents:  {:e #{:m :f}, :c #{:f}, :b #{:c :f}, :d #{:m :f}, :a #{:c :f}}
 dependents-per-fact:  [#{:m :f} #{:c :f} #{:f}]

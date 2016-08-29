@@ -1,3 +1,3 @@
-# Introduction to task2
+# Introduction to droit
 
 TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)
