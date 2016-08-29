@@ -46,29 +46,21 @@
 
 
 
-(defn task1 [rulesets]
+(defn break-out-rules [ruleset]
 
-  (let [into-sets (map set-rule-parser rulesets)]
+  (map set-rule-parser ruleset))
+
+
+
+(defn task1 [ruleset]
+
+  (let [into-sets (break-out-rules ruleset)]
 
     (println "into-sets: " into-sets)
 
-    (reduce (fn [[accumulated-input
+    (reduce reducer into-sets)
 
-                  accumulated-output]
-
-                 [new-input
-
-                  new-output]]
-
-              [(set/union accumulated-input new-input)
-
-               (set/union accumulated-output new-output)])
-
-            into-sets)))
-
-
-
-(task1 ruleset)
+    ))
 
 ;=> into-sets:  ([#{:b :a} #{:c}] [#{:e :c :d} #{:f}] [#{:e :k :d} #{:m}])
 
