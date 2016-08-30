@@ -1,5 +1,6 @@
 (ns droit.task2
-  (:require [clojure.tools.namespace.dependency :as dep]))
+  (:require
+    [clojure.tools.namespace.dependency :as dep]))
 
 (def rule1 [[:a :b] :-> :c])
 
